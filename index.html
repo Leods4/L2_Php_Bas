@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de PHP</title>
+</head>
+<body>
+    <h1>Exemplo de PHP</h1>
+    <p><strong>Declaração de variáveis:</strong></p>
+    <?php
+    // Declaração de variáveis
+    $inteiro = 4; // Inteiro 
+    $pontoflutuante = 2.4; // Ponto flutuante (Float)
+    $nome = "Isabelle"; // String
+    $sobreNome = 'Antunes'; // String 
+    $decisao = TRUE; // Booleano
+
+    // Saída de dados
+    echo "<br/><br/>";
+    echo "<p>Inteiro: $inteiro</p>";
+    echo "<br/><br/>";
+    echo "<p>Ponto flutuante: $pontoflutuante</p>";
+    echo "<br/><br/>";
+    echo "<p>Nome: $nome</p>";
+    echo "<br/><br/>";
+    echo "<p>Sobrenome: $sobreNome</p>";
+    echo "<br/><br/>";
+    echo "<p>Decisão: " . ($decisao ? 'TRUE' : 'FALSE') . "</p>";
+    echo "<br/><br/>";
+    ?>
+
+    <h2>Array de cidades</h2>
+    <?php
+    // Array de cidades
+    $cidades = array(1 => "Palhoca", 2 => "Florianopolis", 3 => "Campeche");
+    // Atribuição de valores do array a variáveis individuais
+    list($a, $b, $c) = array("joao", "maria", "carlos");
+    // Definição de uma constante pi
+    $raio = 2;
+    define("pi", 3.1415926536);
+    $circunf = 2 * pi * $raio;
+
+    // Saída de dados
+    echo "<br/><br/>";
+    echo "<p>Cidades (var_dump):</p>";
+    var_dump($cidades);
+    echo "<br/><br/>";
+    echo "<p>Cidades (print_r):</p>";
+    print_r($cidades);
+    echo "<br/><br/>";
+    echo "<p>Circunferência: $circunf</p>";
+    echo "<br/><br/>";
+    ?>
+
+    <h2>Funções de manipulação de strings</h2>
+    <?php
+    // Funções de manipulação de strings 
+    $nome = "faculdade municipal";
+    echo "<p>Maiúsculas: " . strtoupper($nome) . "</p>";
+    echo "<br/><br/>";
+    echo "<p>Minúsculas: " . strtolower($nome) . "</p>";
+    echo "<br/><br/>";
+    echo "<p>Primeiras letras em maiúsculas: " . ucwords($nome) . "</p>";
+    echo "<br/><br/>";
+    echo "<p>Primeira letra em maiúscula: " . ucfirst($nome) . "</p>";
+    echo "<br/><br/>";
+    $nome = str_replace("e", "&", $nome); // Substitui o caractere "e" por "&"
+    echo "<p>Nome substituído: $nome</p>";
+    echo "<br/><br/>";
+    ?>
+
+    <h2>Manipulação de strings 2</h2>
+    <?php
+    // Manipulação de strings 2
+    $frase = "eh um teste"; // Define a string $frase
+    $q = strpos($frase, "teste"); // Retorna a posição inicial da palavra "teste" na string e armazena em $q
+    echo "<p>Posição da palavra 'teste': $q</p>";
+    echo "<br/><br/>";
+    $texto = substr($frase, 0, $q); // Retorna parte da string, do índice e até a posição de "teste" 
+    echo "<p>Texto antes de 'teste': $texto</p>";
+    echo "<br/><br/>";
+    $texto2 = substr($frase, $q); // Retorna parte da string, a partir da posição de "teste"
+    echo "<p>Texto a partir de 'teste': $texto2</p>";
+    echo "<br/><br/>";
+    echo "<p>Tamanho da frase: " . strlen($frase) . "</p>";
+    echo "<br/><br/>";
+    ?>
+
+    <h2>Operadores de atribuição</h2>
+    <?php
+    // Operadores de atribuição
+    $nome = "felipe"; // Atribuindo valor à variável $nome
+    echo "<p>Concatenado com 'antunes': " . $nome . "antunes</p>";
+    echo "<br/>";
+    // Concatenação composta
+    $nome .= "Programacao";
+    echo "<p>Concatenado com 'Programacao': $nome</p>";
+    echo "<br/>";
+    $valorTotal = 0;
+    $valorTotal += 100; // Adição
+    $valorTotal += 25; // Adição
+    $valorTotal -= 12; // Subtração
+    $valorTotal *= .1; // Multiplicação
+    echo "<p>Valor total: $valorTotal</p>";
+    echo "<br/>";
+    ?>
+
+    <h2>Operadores aritméticos</h2>
+    <?php
+    // Operadores aritméticos
+    $a = 10;
+    $b = 2;
+    echo "<p>Soma: " . ($a + $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Subtração: " . ($a - $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Multiplicação: " . ($a * $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Divisão: " . ($a / $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Resto da divisão: " . ($a % $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Potenciação: " . ($a ** $b) . "</p>";
+    echo "<br/>";
+    ?>
+
+    <h2>Operadores lógicos</h2>
+    <?php
+    // Operadores lógicos
+    $a = 30;
+    $b = 15;
+    echo "<p>Maior que: " . var_dump($a > $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Menor que: " . var_dump($a < $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Igual: " . var_dump($a == $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Idêntico: " . var_dump($a === $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Diferente: " . var_dump($a != $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Não idêntico: " . var_dump($a !== $b) . "</p>";
+    echo "<br/>";
+    echo "<p>Comparação de spaceship:</p>";
+    $a = 5;
+    $b = 10;
+    echo "<p>$a <=> $b: " . ($a <=> $b) . "</p>";
+    $c = 15;
+    $d = 10;
+    echo "<p>$c <=> $d: " . ($c <=> $d) . "</p>";
+    $e = 20;
+    $f = 20;
+    echo "<p>$e <=> $f: " . ($e <=> $f) . "</p>";
+    echo "<br/>";
+    ?>
+
+    <h2>Null coalescing</h2>
+    <?php
+    $d = NULL;
+    $f = NULL;
+    $g = 3;
+    echo "<p>Null coalescing: " . ($d ?? $f ?? $g) . "</p>";
+    echo "<br/>";
+    ?>
+
+    <h2>Incremento e Decremento</h2>
+    <?php
+    // Incremento e Decremento
+    $a = 10;
+    echo "<p>$a++: " . $a++ . "</p>";
+    echo "<br/>";
+    echo "<p>$a++: " . $a++ . "</p>";
+    echo "<br/>";
+    echo "<p>$a--: " . $a-- . "</p>";
+    echo "<br/>";
+    echo "<p>$a--: " . $a-- . "</p>";
+    echo "<br/>";
+    echo "<p>--$a: " . --$a . "</p>";
+    echo "<br/>";
+    echo "<p>++$a: " . ++$a . "</p>";
+    echo "<br/>";
+    $resultado = (10 + 3) / 2;
+    echo "<p>Resultado de (10 + 3) / 2: $resultado</p>";
+    echo "<br/>";
+    ?>
+
+    <h2>Typecasting e Conversão de Tipos</h2>
+    <?php
+    // Typecast e Conversão de Tipos
+    $php = "5"; // $php é uma string com valor "5"
+    echo "<p>Valor original: $php</p>";
+    echo "<br/>";
+    $php = $php + 5; // $php é convertido para inteiro e somado com 5, resultando em 10
+    echo "<p>Após adição de 5: $php</p>";
+    echo "<br/>";
+    $php = $php + 5.7; // $php é convertido para float e somado com 5.7, resultando em 10.7
+    echo "<p>Após adição de 5.7: $php</p>";
+    echo "<br/>";
+    $php = 4 + 3.5; // $php é uma operação aritmética, resultando em 7.5
+    echo "<p>Resultado de 4 + 3.5: $php</p>";
+    echo "<br/>";
+    $php = 4 + "12.5"; // String "12.5" é convertida para float e somada com 4, resultando em 16.5
+    echo "<p>Resultado de 4 + '12.5': $php</p>";
+    echo "<br/>";
+    $php = 5 + "10testes"; // String "10testes" é convertida para inteiro, resultando em 15
+    echo "<p>Resultado de 5 + '10testes': $php</p>";
+    echo "<br/>";
+    ?>
+
+    <h2>Typecast</h2>
+    <?php
+    // Typecast
+    $php = 8; // $php é um inteiro
+    echo "<p>Valor original: $php</p>";
+    echo "<br/>";
+    $php = (double) $php; // $php é convertido para float, resultando em 8.0
+    echo "<p>Convertido para double: $php</p>";
+    echo "<br/>";
+    $php = 1.5; // $php é um float
+    echo "<p>Valor float: $php</p>";
+    echo "<br/>";
+    // settype
+    $php = 9; // $php é um inteiro
+    var_dump($php);
+    echo "<br/>";
+    echo "<br/>";
+    settype($php, "double"); // $php é convertido para float, resultando em 9.0
+    var_dump($php);
+    echo "<br/>";
+    ?>
+
+</body>
+</html>
